@@ -9,65 +9,71 @@ const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
 const navbar = document.querySelector("[data-navbar]");
 const navbarToggleBtn = document.querySelector("[data-navbar-toggle-btn]");
 
-navbarToggleBtn.addEventListener("click", function () { elemToggleFunc(navbar); });
+document.addEventListener('keypress', (event)=>{
+  // 13 points the enter key
+  if(event.keyCode === 13) {
+    window.location.href = "#productList";
+  }
+    
+});
 
 
 const products = [
   {
       id: 1,
-      name: "Product 1",
-      price: 19.99,
-      description: "This is the first product.",
-      imageUrl: "https://via.placeholder.com/150",
+      name: "Digital Design by Morris Mano",
+      price: 650,
+      description: "In Stock",
+      imageUrl: "./assets/Product_1.jpg",
   },
   {
       id: 2,
-      name: "Product 2",
-      price: 29.99,
-      description: "This is the second product.",
-      imageUrl: "https://via.placeholder.com/150",
+      name: "Introduction to the Algorithms",
+      price: 786,
+      description: "In Stock",
+      imageUrl: "./assets/Product_2.jpg",
   },
   {
       id: 3,
-      name: "Product 3",
-      price: 39.99,
-      description: "This is the third product.",
-      imageUrl: "https://via.placeholder.com/150",
+      name: "Deli WD82DMS Scientific Calculator",
+      price: 379,
+      description: "In Stock",
+      imageUrl: "./assets/Product_3.jpg",
   },
   {
-    id: 3,
-    name: "Product 3",
-    price: 39.99,
-    description: "This is the third product.",
-    imageUrl: "https://via.placeholder.com/150",
+    id: 4,
+    name: "Microprocessor, AK Gautam",
+    price: 264,
+    description: "In Stock",
+    imageUrl: "./assets/Product_4.webp",
 },
 {
-  id: 3,
-  name: "Product 3",
-  price: 39.99,
-  description: "This is the third product.",
-  imageUrl: "https://via.placeholder.com/150",
+  id: 5,
+  name: "Design and Analysis of Algorithms by Vimal Kumar",
+  price: 382,
+  description: "In Stock",
+  imageUrl: "./assets/Product_5.webp",
 },
 {
-  id: 3,
-  name: "Product 3",
-  price: 39.99,
-  description: "This is the third product.",
-  imageUrl: "https://via.placeholder.com/150",
+  id: 6,
+  name: "Lenovo Ideapad 1 AMD Ryzen 5 5500U 15.6",
+  price: 15000,
+  description: "In Stock",
+  imageUrl: "./assets/Product_6.webp",
 },
 {
-  id: 3,
-  name: "Product 3",
-  price: 39.99,
-  description: "This is the third product.",
-  imageUrl: "https://via.placeholder.com/150",
+  id: 7,
+  name: "Lenovo 15.6''(13.2cm) Slim EverydayBackpack ",
+  price: 200,
+  description: "In stock",
+  imageUrl: "./assets/Product_7.webp",
 },
 {
-  id: 3,
-  name: "Product 3",
+  id: 8,
+  name: "Casio FX-82ES Plus Non-Programmable Scientific Calculator",
   price: 39.99,
-  description: "This is the third product.",
-  imageUrl: "https://via.placeholder.com/150",
+  description: "In Stock",
+  imageUrl: "./assets/Product_8.webp",
 },
 ];
 
@@ -83,7 +89,7 @@ function displayProducts(productsToDisplay) {
       productCard.innerHTML = `
           <h2 class="product-title">${product.name}</h2>
           <img class="product-image" src="${product.imageUrl}" alt="${product.name}">
-          <p class="product-price">$${product.price.toFixed(2)}</p>
+          <p class="product-price">Rs.${product.price.toFixed(0)}</p>
           <p class="product-description">${product.description}</p>
           <button class="product-details" onclick="redirectToProduct(${product.id})">${"View"}</button>
       `;
