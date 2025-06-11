@@ -15,7 +15,7 @@ document.addEventListener('keypress', (event)=>{
     window.location.href = "#productList";
   }
     
-});
+}); jojo
 
 
 const products = [
